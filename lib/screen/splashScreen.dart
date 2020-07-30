@@ -34,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
     String username = await isSession();
     if(username!=null){
       // Jika username ada masuk ke main.
-      Toast.show("Anda sudah Login", context,
+      Toast.show("Anda sudah Login : ${username}", context,
           duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
       Navigator.pushNamedAndRemoveUntil(
           context, "/main", (Route<dynamic> route) => false);

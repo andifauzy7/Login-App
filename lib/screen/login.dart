@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sepakbola/screen/dashboard.dart';
 import 'package:sepakbola/session/sharedPref.dart';
-import 'package:toast/toast.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -50,10 +49,9 @@ class _LoginState extends State<Login> {
               child: RaisedButton(
                 child: Text("Login"),
                 color: Colors.blue[100], onPressed: () {
-                  print("Username : ${username.text}" + "Password : ${password.text}");
-                  Toast.show("Toast plugin app", context, duration: Toast.LENGTH_SHORT, gravity:  Toast.BOTTOM);
                   setSession(username.text);
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Dashboard()));
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, "/main", (Route<dynamic> route) => false);
               }
               ),
             )
