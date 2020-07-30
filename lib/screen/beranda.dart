@@ -12,8 +12,6 @@ class _berandaState extends State<beranda> {
 
   Future<String> getUsername() async {
     this.username = await SharedPref.getUsername();
-    Toast.show("Anda login sebagai : " + username, context,
-        duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
   }
 
   @override

@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Toast.show("Anda sudah Login", context,
           duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
       Navigator.pushNamedAndRemoveUntil(
-          context, "/dashboard", (Route<dynamic> route) => false);
+          context, "/main", (Route<dynamic> route) => false);
     } else {
       // Jika tidak ada maka masuk ke login.
       Toast.show("Anda belum Login", context,

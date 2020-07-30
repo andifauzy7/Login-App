@@ -14,8 +14,8 @@ void main() {
     //home: PaymentInfo(),
     onGenerateRoute: (RouteSettings settings) {
       switch (settings.name) {
-        case '/dashboard':
-          return _buildRoute(settings, new Dashboard());
+        case '/splash':
+          return _buildRoute(settings, new SplashScreen());
           break;
         case '/login':
           return _buildRoute(settings, new Login());

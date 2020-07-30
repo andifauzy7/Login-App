@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sepakbola/session/sharedPref.dart';
 
 class profil extends StatefulWidget {
   @override
@@ -26,7 +27,15 @@ class _profilState extends State<profil> {
               backgroundColor: Colors.transparent,
             ),
             Text("Username :", style: TextStyle(fontSize: 32.0)),
-            Text("Andifauzy7", style: TextStyle(fontSize: 20.0))
+            Text("Andifauzy7", style: TextStyle(fontSize: 20.0)),
+            RaisedButton(
+                child: Text("Logout"),
+                color: Colors.blue[100], onPressed: () {
+                  SharedPref.clear();
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, "/splash", (Route<dynamic> route) => false);
+            }
+            )
           ],
         ),
       ),
