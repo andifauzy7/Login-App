@@ -5,6 +5,7 @@ import 'package:sepakbola/session/sharedPref.dart';
 import 'package:toast/toast.dart';
 
 class SplashScreen extends StatefulWidget {
+  static String name;
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
@@ -32,6 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void handleTapEvent() async {
     String username = await isSession();
+    SplashScreen.name = username;
     if(username!=null){
       // Jika username ada masuk ke main.
       Toast.show("Anda sudah Login : ${username}", context,

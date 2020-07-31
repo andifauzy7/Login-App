@@ -51,7 +51,7 @@ class _LoginState extends State<Login> {
                 color: Colors.blue[100], onPressed: () {
                   setSession(username.text);
                   Navigator.pushNamedAndRemoveUntil(
-                      context, "/main", (Route<dynamic> route) => false);
+                      context, "/splash", (Route<dynamic> route) => false);
               }
               ),
             )

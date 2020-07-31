@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sepakbola/screen/splashScreen.dart';
 
 class beranda extends StatefulWidget {
   @override
@@ -22,7 +23,7 @@ class _berandaState extends State<beranda> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text("Selamat Datang,", style: TextStyle(fontSize: 18.0)),
-            Text("Andifauzy7!",style: TextStyle(fontSize: 24.0, color: Colors.blue))
+            Text("${SplashScreen.name}!",style: TextStyle(fontSize: 24.0, color: Colors.blue))
           ],
         ),
       ),
