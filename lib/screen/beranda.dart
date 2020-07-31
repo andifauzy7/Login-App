@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sepakbola/session/sharedPref.dart';
-import 'package:toast/toast.dart';
 
 class beranda extends StatefulWidget {
   @override
@@ -8,17 +6,6 @@ class beranda extends StatefulWidget {
 }
 
 class _berandaState extends State<beranda> {
-  String username;
-
-  Future<String> getUsername() async {
-    this.username = await SharedPref.getUsername();
-  }
-
-  @override
-  void initState() {
-    getUsername();
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +22,7 @@ class _berandaState extends State<beranda> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text("Selamat Datang,", style: TextStyle(fontSize: 18.0)),
-            Text(username ?? 'Pengguna',style: TextStyle(fontSize: 24.0, color: Colors.blue))
+            Text("Andifauzy7!",style: TextStyle(fontSize: 24.0, color: Colors.blue))
           ],
         ),
       ),
