@@ -19,7 +19,8 @@ class SharedPref{
   }
 
   void clearSession() async {
-    await SharedPref.clear();
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.clear();
   }
 
 }
