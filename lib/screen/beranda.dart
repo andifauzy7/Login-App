@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:sepakbola/screen/splashScreen.dart';
+import 'package:sepakbola/constant/constant.dart';
 
 class beranda extends StatefulWidget {
   @override
   _berandaState createState() => _berandaState();
 }
 
+// ignore: camel_case_types
 class _berandaState extends State<beranda> {
 
   @override
@@ -23,7 +24,7 @@ class _berandaState extends State<beranda> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text("Selamat Datang,", style: TextStyle(fontSize: 18.0)),
-            Text("${SplashScreen.name}!",style: TextStyle(fontSize: 24.0, color: Colors.blue))
+            Text("${constant.USERNAME_VALUE}!",style: TextStyle(fontSize: 24.0, color: Colors.blue))
           ],
         ),
       ),

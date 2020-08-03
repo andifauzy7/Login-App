@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sepakbola/constant/constant.dart';
 import 'package:sepakbola/screen/splashScreen.dart';
 import 'package:sepakbola/session/sharedPref.dart';
 
@@ -28,7 +29,7 @@ class _profilState extends State<profil> {
               backgroundColor: Colors.transparent,
             ),
             Text("Username :", style: TextStyle(fontSize: 32.0)),
-            Text("${SplashScreen.name}", style: TextStyle(fontSize: 20.0)),
+            Text("${constant.USERNAME_VALUE}", style: TextStyle(fontSize: 20.0)),
             RaisedButton(
                 child: Text("Logout"),
                 color: Colors.blue[100], onPressed: () {

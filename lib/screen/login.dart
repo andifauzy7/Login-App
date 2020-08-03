@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sepakbola/screen/dashboard.dart';
+import 'package:sepakbola/constant/constant.dart';
 import 'package:sepakbola/session/sharedPref.dart';
 
 class Login extends StatefulWidget {
@@ -13,6 +13,7 @@ class _LoginState extends State<Login> {
 
   void setSession(String username) {
     setState(() {
+      constant.USERNAME_VALUE = username;
       SharedPref.setUsername(username);
     });
   }
@@ -51,7 +52,7 @@ class _LoginState extends State<Login> {
                 color: Colors.blue[100], onPressed: () {
                   setSession(username.text);
                   Navigator.pushNamedAndRemoveUntil(
-                      context, "/splash", (Route<dynamic> route) => false);
+                      context, "/main", (Route<dynamic> route) => false);
               }
               ),
             )

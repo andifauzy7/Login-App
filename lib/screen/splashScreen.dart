@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:sepakbola/screen/dashboard.dart';
-import 'package:sepakbola/screen/login.dart';
+import 'package:sepakbola/constant/constant.dart';
 import 'package:sepakbola/session/sharedPref.dart';
 import 'package:toast/toast.dart';
 
 class SplashScreen extends StatefulWidget {
-  static String name;
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  var dura = const Duration(seconds: 3);
+  var duration = const Duration(seconds: 3);
 
   @override
   void initState() {
@@ -20,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   void afterFirstLayout(BuildContext context) {
-    new Future.delayed(dura, handleTapEvent);
+    new Future.delayed(duration, handleTapEvent);
   }
 
   Future<String> isSession() async {
@@ -33,10 +31,10 @@ class _SplashScreenState extends State<SplashScreen> {
 
   void handleTapEvent() async {
     String username = await isSession();
-    SplashScreen.name = username;
+    constant.USERNAME_VALUE = username;
     if(username!=null){
       // Jika username ada masuk ke main.
-      Toast.show("Anda sudah Login : ${username}", context,
+      Toast.show("Anda sudah Login : $username", context,
           duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
       Navigator.pushNamedAndRemoveUntil(
           context, "/main", (Route<dynamic> route) => false);
