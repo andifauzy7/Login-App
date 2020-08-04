@@ -17,14 +17,39 @@ class _berandaState extends State<beranda> {
         title: Text("Beranda"),
       ),
       body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [
+              Colors.blue,
+              Colors.lightBlueAccent,
+            ]),
+          ),
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
-        margin: EdgeInsets.all(16.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text("Selamat Datang,", style: TextStyle(fontSize: 18.0)),
-            Text("${constant.USERNAME_VALUE}!",style: TextStyle(fontSize: 24.0, color: Colors.blue))
+            SizedBox(height: 48.0),
+            Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'Selamat Datang, ${constant.USERNAME_VALUE}!',
+                style: TextStyle(fontSize: 20.0, color: Colors.white),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child: CircleAvatar(
+                radius: 72.0,
+                backgroundColor: Colors.transparent,
+                backgroundImage: AssetImage('asset/profile.png'),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Text(
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec hendrerit condimentum mauris id tempor. Praesent eu commodo lacus. Praesent eget mi sed libero eleifend tempor. Sed at fringilla ipsum. Duis malesuada feugiat urna vitae convallis. Aliquam eu libero arcu.',
+                style: TextStyle(fontSize: 16.0, color: Colors.white),
+              ),
+            )
           ],
         ),
       ),

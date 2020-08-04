@@ -34,7 +34,7 @@ class _LoginState extends State<Login> {
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: <Widget>[
-            Image.asset("asset/user.jpg",
+            Image.asset("asset/login.jpg",
                 width: MediaQuery.of(context).size.width / 2),
             SizedBox(height: 48.0),
             TextField(
