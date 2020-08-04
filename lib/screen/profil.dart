@@ -150,16 +150,18 @@ class _profilState extends State<profil> {
               child: Text("Komp. GBI Blok C13 No. 24, Ciwastra.",
                   style: TextStyle(color: Colors.white)),
             ),
-            RaisedButton(
-                child: Text("Logout"),
-                color: Colors.blue[100],
-                onPressed: () {
-                  SharedPref.clear();
-                  Navigator.pushNamedAndRemoveUntil(
-                      context, "/login", (Route<dynamic> route) => false);
-                })
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          SharedPref.clear();
+          Navigator.pushNamedAndRemoveUntil(
+              context, "/login", (Route<dynamic> route) => false);
+        },
+        backgroundColor: Colors.white,
+        icon: Icon(Icons.person, color: Colors.blue,),
+        label: Text("Logout", style: TextStyle(color: Colors.blue),),
       ),
     );
   }
