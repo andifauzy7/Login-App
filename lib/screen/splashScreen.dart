@@ -51,15 +51,15 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
+        color: Colors.white,
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Image.asset("asset/football.png", width: 200.0),
-            Text("Aplikasi Sepakbola",
-                style: TextStyle(fontSize: 28.0, color: Colors.blue))
+            Image.asset("asset/football.jpg", width: 200.0),
+            CircularProgressIndicator()
           ],
         ),
       ),
