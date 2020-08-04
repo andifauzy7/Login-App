@@ -23,6 +23,12 @@ class _listPertandinganState extends State<listPertandingan> {
         title: Text("List Pertandingan"),
       ),
       body: Container(
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [
+            Colors.blue,
+            Colors.lightBlueAccent,
+          ]),
+        ),
         child: ListView.builder(
             itemCount: daftarPertandingan.length,
             itemBuilder: (context, position) {
@@ -39,7 +45,7 @@ getAll(){
       namaKandang: "Arsenal",
       gambarKandang: "https://cdn.freebiesupply.com/logos/large/2x/arsenal-6-logo-png-transparent.png",
       namaTandang: "Liverpool",
-      gambarTandang: "https://upload.wikimedia.org/wikipedia/sco/thumb/0/0c/Liverpool_FC.svg/1200px-Liverpool_FC.svg.png",
+      gambarTandang: "https://dlscenter.com/wp-content/uploads/2017/06/liverpool-logo.png",
       poinKandang: 2,
       poinTandang: 1,
       deskripsiKandang: "Arsenal Football Club adalah klub sepak bola profesional Inggris yang berbasis di daerah Holloway, London. didirikan pada 1886 dengan nama Dial Square.",
@@ -49,7 +55,7 @@ getAll(){
         namaKandang: "Bayern",
         gambarKandang: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Logo_FC_Bayern_M%C3%BCnchen_%282002%E2%80%932017%29.svg/768px-Logo_FC_Bayern_M%C3%BCnchen_%282002%E2%80%932017%29.svg.png",
         namaTandang: "Dortmund",
-        gambarTandang: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Borussia_Dortmund_logo.svg/560px-Borussia_Dortmund_logo.svg.png",
+        gambarTandang: "https://img.pngio.com/dream-league-soccer-kits-dortmund-kit-logo-512x512-url-2017-2018-dream-league-soccer-2017-logo-400_400.png",
         poinKandang: 5,
         poinTandang: 0,
         deskripsiKandang: "FC Bayern München, FC Bayern Munich, atau FC Bayern, adalah sebuah klub olahraga Jerman yang berbasis di München, Bavaria.",
@@ -96,14 +102,24 @@ getAll(){
         deskripsiLawan: "Villarreal CF adalah nama tim sepak bola Spanyol yang bermarkas di kota Villarreal. Tim ini berdiri pada tahun 1932 dengan stadion kandang di El Madrigal."
     ),
     pertandingan(
-        namaKandang: "Manchester United",
+        namaKandang: "Man United",
         gambarKandang: "https://pngimg.com/uploads/manchester_united/manchester_united_PNG16.png",
-        namaTandang: "Manchaster City",
+        namaTandang: "Man City",
         gambarTandang: "https://logodownload.org/wp-content/uploads/2017/02/manchester-city-fc-logo-escudo-badge-5.png",
         poinKandang: 3,
         poinTandang: 4,
         deskripsiKandang: "Manchester United Football Club adalah sebuah klub sepak bola profesional Inggris yang berbasis di Old Trafford, Manchester Raya, yang bermain di Liga Inggris. ",
         deskripsiLawan: "Manchester City Football Club adalah sebuah klub sepak bola profesional dari Inggris yang bermain di Liga Premier Inggris. Klub ini merupakaan klub sekota dengan Manchester United dan bermarkas di Stadion Etihad"
+    ),
+    pertandingan(
+        namaKandang: "PSG",
+        gambarKandang: "https://www.nicepng.com/png/detail/342-3429208_psg-paris-saint-germain-logo.png",
+        namaTandang: "Barcelona",
+        gambarTandang: "https://brandslogo.net/wp-content/uploads/2018/10/new-fc-barcelona-logo.png",
+        poinKandang: 2,
+        poinTandang: 6,
+        deskripsiKandang: "Paris Saint-Germain Football Club atau dikenal luas dengan sebutan PSG merupakan sebuah tim sepak bola Prancis yang bermain di Ligue 1, Prancis. Bermarkas di Paris, Prancis. ",
+        deskripsiLawan: "Fútbol Club Barcelona, juga dikenal sebagai Barcelona atau Barça, adalah klub sepak bola profesional yang berbasis di Barcelona, Catalunya, Spanyol"
     )
   ];
 }

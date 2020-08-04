@@ -30,32 +30,44 @@ class pertandingan {
         Navigator.push(context, MaterialPageRoute(builder: (context) => detailPertandingan(items)));
       },
       child: Container(
+        margin: EdgeInsets.only(left: 4.0, top: 4.0, right: 4.0),
         child: Card(
+          color: Colors.blue[100],
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Column(
-                children: <Widget>[
-                  CircleAvatar(
-                    radius: 40.0,
-                    backgroundImage: NetworkImage(items.gambarKandang),
-                    backgroundColor: Colors.transparent,
-                  ),
-                  Text(items.namaKandang)
-                ],
+              Container(
+                width: MediaQuery.of(context).size.width/3,
+                padding: EdgeInsets.only(top: 4.0, bottom: 4.0),
+                child: Column(
+                  children: <Widget>[
+                    CircleAvatar(
+                      radius: 25.0,
+                      backgroundImage: NetworkImage(items.gambarKandang),
+                      backgroundColor: Colors.transparent,
+                    ),
+                    Text(items.namaKandang)
+                  ],
+                ),
               ),
-              Text("${items.poinKandang} - ${items.poinTandang}",
-                  style: TextStyle(fontSize: 24.0)),
-              Column(
-                children: <Widget>[
-                  CircleAvatar(
-                    radius: 40.0,
-                    backgroundImage: NetworkImage(items.gambarTandang),
-                    backgroundColor: Colors.transparent,
-                  ),
-                  Text(items.namaTandang)
-                ],
+              Container(
+                child: Text("${items.poinKandang} - ${items.poinTandang}",
+                    style: TextStyle(fontSize: 24.0, color: Colors.blueGrey)),
+              ),
+              Container(
+                width: MediaQuery.of(context).size.width/3,
+                padding: EdgeInsets.only(top: 4.0, bottom: 4.0),
+                child: Column(
+                  children: <Widget>[
+                    CircleAvatar(
+                      radius: 25.0,
+                      backgroundImage: NetworkImage(items.gambarTandang),
+                      backgroundColor: Colors.transparent,
+                    ),
+                    Text(items.namaTandang)
+                  ],
+                ),
               )
             ],
           ),
