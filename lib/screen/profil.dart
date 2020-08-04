@@ -144,9 +144,33 @@ class _profilState extends State<profil> {
       ),
       floatingActionButton: FloatingActionButton.extended(
         onPressed: () {
-          SharedPref.clear();
-          Navigator.pushNamedAndRemoveUntil(
-              context, "/login", (Route<dynamic> route) => false);
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: Text('Logout'),
+                content: Text("Apakah kamu setuju untuk Logout?"),
+                actions: <Widget>[
+                  FlatButton(
+                    child: Text("YA"),
+                    onPressed: () {
+                      SharedPref.clear();
+                      Navigator.of(context).pop();
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, "/login", (Route<dynamic> route) => false);
+                    },
+                  ),
+
+                  FlatButton(
+                    child: Text("TIDAK", style: TextStyle(color: Colors.red),),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                  ),
+                ],
+              );
+            },
+          );
         },
         backgroundColor: Colors.white,
         icon: Icon(Icons.person, color: Colors.blue,),

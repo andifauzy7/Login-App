@@ -29,14 +29,11 @@ class _LoginState extends State<Login> {
       ),
       body: Container(
         color: Colors.white,
-        padding: EdgeInsets.all(30.0),
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        child: Column(
+        child: ListView(
+          padding: EdgeInsets.all(30.0),
           children: <Widget>[
-            Image.asset("asset/login.jpg",
-                width: MediaQuery.of(context).size.width / 2),
-            SizedBox(height: 48.0),
+            Image.asset("asset/login.jpg", height: MediaQuery.of(context).size.width / 2),
+            SizedBox(height: 36.0),
             TextField(
               controller: username,
               decoration: InputDecoration(
@@ -79,7 +76,7 @@ class _LoginState extends State<Login> {
                           context, "/main", (Route<dynamic> route) => false);
                     }
                   }),
-            ),
+            )
           ],
         ),
       ),
