@@ -12,37 +12,80 @@ class detailPertandingan extends StatelessWidget {
       ),
       body: Container(
         padding: EdgeInsets.all(16.0),
+        decoration: BoxDecoration(
+          gradient: LinearGradient(colors: [
+            Colors.blue,
+            Colors.lightBlueAccent,
+          ]),
+        ),
         child: Column(
           children: <Widget>[
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: <Widget>[
-                Column(
+            Container(
+              width: MediaQuery.of(context).size.width,
+              child: Card(
+                color: Colors.blue[100],
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: <Widget>[
-                    CircleAvatar(
-                      radius: 40.0,
-                      backgroundImage: NetworkImage(satuPertandingan.gambarKandang),
-                      backgroundColor: Colors.transparent,
+                    Container(
+                      padding: EdgeInsets.all(8.0),
+                      child: Column(
+                        children: <Widget>[
+                          CircleAvatar(
+                            radius: 40.0,
+                            backgroundImage:
+                                NetworkImage(satuPertandingan.gambarKandang),
+                            backgroundColor: Colors.transparent,
+                          ),
+                          Text(satuPertandingan.namaKandang)
+                        ],
+                      ),
                     ),
-                    Text(satuPertandingan.namaKandang)
+                    Container(
+                      padding: EdgeInsets.all(8.0),
+                      child: Column(
+                        children: <Widget>[
+                          Text("VS"),
+                          Text(
+                              "${satuPertandingan.poinKandang} - ${satuPertandingan.poinTandang}",
+                              style: TextStyle(fontSize: 32.0)),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.all(8.0),
+                      child: Column(
+                        children: <Widget>[
+                          CircleAvatar(
+                            radius: 40.0,
+                            backgroundImage:
+                                NetworkImage(satuPertandingan.gambarTandang),
+                            backgroundColor: Colors.transparent,
+                          ),
+                          Text(satuPertandingan.namaTandang)
+                        ],
+                      ),
+                    ),
                   ],
                 ),
-                Text("VS", style: TextStyle(fontSize: 18.0),),
-                Column(
-                  children: <Widget>[
-                    CircleAvatar(
-                      radius: 40.0,
-                      backgroundImage: NetworkImage(satuPertandingan.gambarTandang),
-                      backgroundColor: Colors.transparent,
-                    ),
-                    Text(satuPertandingan.namaTandang)
-                  ],
-                ),
-              ],
+              ),
             ),
-            Text("${satuPertandingan.poinKandang} - ${satuPertandingan.poinTandang}", style: TextStyle(fontSize: 32.0)),
-            Text(satuPertandingan.deskripsiKandang),
-            Text(satuPertandingan.deskripsiLawan)
+            Container(
+                width: MediaQuery.of(context).size.width,
+                child: Card(
+                  color: Colors.green[100],
+                  child: Container(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(satuPertandingan.deskripsiKandang)),
+                )),
+            Container(
+                width: MediaQuery.of(context).size.width,
+                child: Card(
+                  color: Colors.red[100],
+                  child: Container(
+                      padding: EdgeInsets.all(16.0),
+                      child: Text(satuPertandingan.deskripsiLawan)),
+                ))
           ],
         ),
       ),
