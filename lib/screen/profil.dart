@@ -63,16 +63,13 @@ class _profilState extends State<profil> {
         title: Text("Profil Anda"),
       ),
       body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: [
             Colors.blue,
             Colors.lightBlueAccent,
           ]),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: <Widget>[
             photo,
             descUser,
@@ -139,6 +136,7 @@ class _profilState extends State<profil> {
               child: Text("Komp. GBI Blok C13 No. 24, Ciwastra.",
                   style: TextStyle(color: Colors.white)),
             ),
+            SizedBox(height: 36.0),
           ],
         ),
       ),

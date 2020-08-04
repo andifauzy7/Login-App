@@ -23,11 +23,8 @@ class _berandaState extends State<beranda> {
               Colors.lightBlueAccent,
             ]),
           ),
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
         child: Column(
           children: <Widget>[
-            SizedBox(height: 48.0),
             Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
@@ -35,12 +32,14 @@ class _berandaState extends State<beranda> {
                 style: TextStyle(fontSize: 20.0, color: Colors.white),
               ),
             ),
-            Padding(
-              padding: EdgeInsets.all(16.0),
-              child: CircleAvatar(
-                radius: 72.0,
-                backgroundColor: Colors.transparent,
-                backgroundImage: AssetImage('asset/profile.png'),
+            Center(
+              child: Padding(
+                padding: EdgeInsets.only(top: 16.0),
+                child: CircleAvatar(
+                  radius: 72.0,
+                  backgroundColor: Colors.transparent,
+                  backgroundImage: AssetImage('asset/profile.png'),
+                ),
               ),
             ),
             Padding(
