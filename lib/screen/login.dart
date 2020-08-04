@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sepakbola/constant/constant.dart';
 import 'package:sepakbola/session/sharedPref.dart';
+import 'package:toast/toast.dart';
 
 class Login extends StatefulWidget {
   @override
@@ -23,39 +24,62 @@ class _LoginState extends State<Login> {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: AppBar(
+        leading: Icon(Icons.verified_user),
         title: Text("Halaman Login"),
       ),
       body: Container(
+        color: Colors.white,
         padding: EdgeInsets.all(30.0),
         height: MediaQuery.of(context).size.height,
         width: MediaQuery.of(context).size.width,
         child: Column(
           children: <Widget>[
-            Image.asset("asset/user.png", width: 150.0),
+            Image.asset("asset/user.jpg",
+                width: MediaQuery.of(context).size.width / 2),
+            SizedBox(height: 48.0),
             TextField(
               controller: username,
               decoration: InputDecoration(
-                hintText: "Masukkan Username"
+                hintText: "Masukkan Username ...",
+                contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
+            SizedBox(height: 8.0),
             TextField(
               controller: password,
               obscureText: true,
               decoration: InputDecoration(
-                  hintText: "Masukkan Password"
+                hintText: "Masukkan Password ...",
+                contentPadding: EdgeInsets.fromLTRB(20.0, 10.0, 20.0, 10.0),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(32.0)),
               ),
             ),
+            SizedBox(height: 24.0),
             SizedBox(
               width: double.infinity,
               child: RaisedButton(
-                child: Text("Login"),
-                color: Colors.blue[100], onPressed: () {
-                  setSession(username.text);
-                  Navigator.pushNamedAndRemoveUntil(
-                      context, "/main", (Route<dynamic> route) => false);
-              }
-              ),
-            )
+                  child: Text(
+                    "Login",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                  shape: new RoundedRectangleBorder(
+                    borderRadius: new BorderRadius.circular(30.0),
+                  ),
+                  color: Colors.blue,
+                  onPressed: () {
+                    if(username.text=="" || password.text==""){
+                      Toast.show("Isian tidak boleh kosong.", context,
+                          duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+                    } else {
+                      setSession(username.text);
+                      Navigator.pushNamedAndRemoveUntil(
+                          context, "/main", (Route<dynamic> route) => false);
+                    }
+                  }),
+            ),
           ],
         ),
       ),

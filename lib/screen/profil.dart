@@ -25,7 +25,7 @@ class _profilState extends State<profil> {
           children: <Widget>[
             CircleAvatar(
               radius: 100.0,
-              backgroundImage: AssetImage("asset/user.png"),
+              backgroundImage: AssetImage("asset/user.jpg"),
               backgroundColor: Colors.transparent,
             ),
             Text("Username :", style: TextStyle(fontSize: 32.0)),
