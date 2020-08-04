@@ -35,7 +35,7 @@ class _profilState extends State<profil> {
                 color: Colors.blue[100], onPressed: () {
                   SharedPref.clear();
                   Navigator.pushNamedAndRemoveUntil(
-                      context, "/splash", (Route<dynamic> route) => false);
+                      context, "/login", (Route<dynamic> route) => false);
             }
             )
           ],
